@@ -205,6 +205,69 @@ html{
 }
 /* End of Page BG */
 
+/*Navigation*/
+/*Menu Icon*/
+.menu-icon{
+    position: fixed;
+    top: 0;
+    right: 6rem;
+    width: 12rem;
+    height: 7rem;
+    /*background-color: red;*/
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.menu-icon-line{
+    width: 4rem;
+    height: 0.1rem;
+    background-color: #fff;
+    margin: 0.5rem 0;
+    box-shadow: 0 0.3rem 0.5rem #000;
+}
+
+.show-menu-icon{
+    opacity: 1;
+    visibility: visible;
+}
+/*End of Menu Icon*/
+/*Navbar*/
+.navbar{
+    position: fixed;
+    top: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3rem;
+    z-index: 100;
+    transition: opacity 0.5s,
+    visibility 0.5s, transform 0.5s;
+}
+
+.navbar-link{
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 2.5rem;
+    /*z-index: 100;*/
+    text-shadow: 0 0.3rem 0.5rem black;
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
+}
+
+.hide-navbar{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10rem);
+}
+/*End of Navbar*/
+/*End of Navigation*/
+
 /*Section 1*/
 .section-1{
     position:relative;
@@ -546,6 +609,155 @@ html{
     border-right:none;
 }
 /*end of projects button*/
-
-
 /*End of Section 3*/
+
+/*Section 4*/
+.section-4{
+    position: relative;
+    width: 100%;
+}
+
+/*Services*/
+.services-wrapper{
+    width: 100%;
+    flex-direction: column;
+}
+
+.service{
+    width: 70%;
+    margin: 2rem 0;
+    border-bottom: 0.5rem solid #9b0e0e;
+}
+
+.service-btn{
+    width: 100%;
+    position: relative;
+    display: block;
+    height: 15rem;
+
+}
+
+.service-btn span{
+    font-family: "Poppins", sans-serif;
+    font-size: 9rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #9b0e0e;
+    position: absolute;
+    right: 0;
+    transition: right 0.5s;
+}
+
+.service-text{
+    font-size:4rem;
+    color: #777;
+    letter-spacing: 0.1rem;
+    height:0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.change.service-text{
+    height: 15rem;
+    visibility: visible;
+    opacity: 1;
+    transition: height 0.5s, opacity 0.5s
+    0.5s;
+}
+/*End of Services*/
+/*End of Section-4*/
+
+
+/*Section-5*/
+
+/*Form*/
+.form-heading{
+    font-family: "Poppins",
+    sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    color: #9b0e0e;
+    letter-spacing: 0.3rem;
+    margin-bottom: 3rem;
+    transition: opacity 0.3s;
+}
+
+.contact-form{
+    flex-direction: column;
+}
+
+.contact-form-input{
+    width: 60rem;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    background-color: rgba(255,255,255,0.1);
+    border: 0.1rem solid #9b0e0e;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #aaa;
+    letter-spacing: 0.1rem;
+    height: 5rem;
+}
+
+.contact-form-textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.form-submit-btn{
+    width: 20rem;
+    height: 5rem;
+    background-color: #9b0e0e;
+    border: none;
+    align-self: flex-start;
+    font-size: 1.8rem;
+    color: #fff;
+}
+/*End of Form*/
+.section-5{
+    position:relative;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/*slideshow*/
+.slideshow{
+    display: flex;
+    width: 50rem;
+    margin-top: 10rem;
+    padding: 0 2rem;
+}
+
+.slideshow-link{
+    width: 20%;
+    filter: brightness(0.5);
+    transition: filter 0.5s;
+}
+
+.slideshow-link:nth-child(1),
+.slideshow-link:nth-child(5){
+    transition: width 0.5s,
+    opacity 0.5s;
+}
+
+.slideshow-link:nth-child(3){
+    transition: filter 0.5s;
+}
+
+.slideshow-link img{
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.faded-out{
+    opacity: 0;
+    width: 0;
+}
+
+.light{
+    filter: brightness(1.5);
+}
+/*End of slideshow*/
+/*End of Section-5*/
+

@@ -85,6 +85,26 @@ mainBtns.forEach(btn=>{
 })
 //end of main button
 
+//Navigation
+const menuIcon = document.querySelector(".menu-icon");
+const navbar = document.querySelector(".navbar");
+
+document.addEventListener("scroll",()=>{
+    menuIcon.classList.add("show-menu-icon");
+    navbar.classList.add("hide-navbar");
+
+    if(window.scrollY === 0){
+        menuIcon.classList.remove("show-menu-icon");
+        navbar.classList.remove("hide-navbar");
+    }
+})
+
+menuIcon.addEventListener("click",()=>{
+    menuIcon.classList.remove("show-menu-icon");
+    navbar.classList.remove("hide-navbar");
+})
+//End of Navigation
+
 // About Me Text
 const aboutMeText = document.querySelector(".about-me-text");
 const aboutMeTextContent =
@@ -186,3 +206,70 @@ projectsBtn.addEventListener("click",(e)=>{
 //end of projects button
 //End of Projects
 
+//section 4
+document.querySelectorAll('.service-btn').forEach(service=>{
+    service.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const serviceText = service.nextElementSibling
+        serviceText.classList.toggle("change");
+
+        const rightPosition = serviceText.classList.contains("change") ?
+            `calc(100% - ${getComputedStyle(service.firstElementChild).width})`
+            :0;
+
+            service.firstElementChild.style.right = rightPosition;
+    });
+});
+//End of section 4
+
+//section 5
+//Form
+const formHeading = document.querySelector(".form-heading");
+const formInputs = document.querySelectorAll(".contact-form-input");
+
+formInputs.forEach((input)=>{
+    input.addEventListener("focus",()=>{
+        formHeading.style.opacity = "0";
+        setTimeout(()=>{
+            formHeading.textContent = `Your ${input.placeholder}`;
+            formHeading.style.opacity = "1";
+        },300);
+    });
+
+    input.addEventListener("blur",()=>{
+        formHeading.style.opacity = "0";
+        setTimeout(()=>{
+            formHeading.textContent = "Let's Talk";
+            formHeading.style.opacity = "1";
+        },300);
+    });
+});
+//End of Form
+
+//slideShow
+const slideShow = document.querySelector(".slideshow");
+
+setInterval(()=>{
+    const firstIcon = slideShow.firstElementChild;
+
+    firstIcon.classList.add("faded-out");
+
+    const thirdIcon = slideShow.children[3];
+
+    thirdIcon.classList.add("light");
+
+    thirdIcon.previousElementSibling.classList.remove("light");
+
+
+    setTimeout(()=>{
+        slideShow.removeChild(firstIcon);
+
+        slideShow.appendChild(firstIcon);
+
+        setTimeout(()=>{
+            firstIcon.classList.remove("faded-out");
+        },500);
+    },500);
+},3000);
+//end of slideShow
+//End of section 5
