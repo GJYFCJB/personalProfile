@@ -7,3 +7,4 @@ Website of personalProfile
 
 •	Applied responsive web design and form validation, and host the website on Netlify.
 
+website: https://jingu-protfolio-website.netlify.app
