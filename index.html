@@ -19,17 +19,17 @@
     <!-- ENd of Page BG -->
 
     <!--Progress Bar-->
-    <a href = "#" class = "progress-bar">
+    <a href = "#" class = "progress-bar center sticky">
         <div class="half-circle"></div>
         <div class="half-circle"></div>
         <div class="half-circle-top"></div>
-        <div class="progress-bar-circle">&#8595;</div>
+        <div class="progress-bar-circle center" >&#8595;</div>
     </a>
     <!--End of Progress Bar-->
 
     <!--Navigation-->
     <!--Menu Icon-->
-    <div class = "menu-icon center">
+    <div class = "menu-icon center sticky">
         <div class="menu-icon-line"></div>
         <div class="menu-icon-line"></div>
 
@@ -38,11 +38,11 @@
 
     <!--Navbar-->
     <nav class = "navbar">
-        <a href = "#section-1" class = "navbar-link">Home</a>
-        <a href = "#section-2" class = "navbar-link">About Me</a>
-        <a href = "#section-3" class = "navbar-link">Projects</a>
-        <a href = "#section-4" class = "navbar-link">Services</a>
-        <a href = "#section-5" class = "navbar-link">Contact</a>
+        <a href = "#section-1" class = "navbar-link pointer-enter">Home</a>
+        <a href = "#section-2" class = "navbar-link pointer-enter">About Me</a>
+        <a href = "#section-3" class = "navbar-link pointer-enter">Projects</a>
+        <a href = "#section-4" class = "navbar-link pointer-enter">Services</a>
+        <a href = "#section-5" class = "navbar-link pointer-enter">Contact</a>
 
     </nav>
     <!--End of Navbar-->
@@ -117,34 +117,34 @@
 
         <!-- Projects -->
         <div class = "projects center">
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-1.jpg">
             </div>
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-2.jpg">
             </div>
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-3.jpg">
             </div>
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-4.jpg">
             </div>
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-5.jpg">
             </div>
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-6.jpg">
             </div>
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-7.jpg">
             </div>
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-8.jpg">
             </div>
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-9.jpg">
             </div>
-            <div class = "project">
+            <div class = "project pointer-enter">
                 <img src = "images/projects/project-10.jpg">
             </div>
         </div>
@@ -225,26 +225,48 @@
     <!--Form-->
         <div class = "form-wrapper">
             <h2 class = "form-heading">Let's Talk</h2>
-            <form class = "contact-form center">
-                <input type = "text"
-                       class = "contact-form-input"
-                       placeholder="Name"/>
-                <input type = "email"
-                       class = "contact-form-input"
+            <form class = "contact-form center" action="POST" data-netlify = "true">
+
+                <input
+                       type = "text"
+                       class = "contact-form-input pointer-enter"
+                       placeholder="Name"
+                       id = "name"
+                       autocomplete="off"
+                       name = "name"
+                />
+                <p class = "message">Error Message</p>
+                <input
+                       type = "text"
+                       class = "contact-form-input pointer-enter"
                        placeholder="Email"
+                       id = "email"
+                       autocomplete="off"
+                       name = "email"
                 />
-                <input type = "text"
-                       class = "contact-form-input"
+                <p class = "message">Error Message</p>
+                <input
+                       type = "text"
+                       class = "contact-form-input pointer-enter"
                        placeholder="Subject"
+                       id = "subject"
+                       autocomplete="off"
+                       name = "subject"
                 />
+                <p class = "message">Error Message</p>
                 <textarea
-                class = "contact-form-input
-                contact-form-textarea"
-                placeholder="Message"
+                        class = "contact-form-input
+                        contact-form-textarea pointer-enter"
+                        placeholder="Message"
+                        id = "message"
+                        autocomplete="off"
+                        name = "message"
                 ></textarea>
-                <input type = "submit"
-                class = "form-submit-btn"
-                value = "Send Request"/>
+                <p class = "message">Error Message</p>
+                <input
+                        type = "submit"
+                        class = "form-submit-btn pointer-enter"
+                        value = "Send Request"/>
             </form>
         </div>
     <!--End of Form-->
