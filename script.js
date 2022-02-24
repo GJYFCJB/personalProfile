@@ -258,16 +258,17 @@ menuIcon.addEventListener("click",()=>{
 // About Me Text
 const aboutMeText = document.querySelector(".about-me-text");
 const aboutMeTextContent =
-    "I am a designer & I create awards winning websites with the best user experience & I do not talk much, just contact me. :)";
+    "I am a master's student with computer science major and I have a solid Python Java and C++ foundation.\n" + "      \n" +
+    "I am looking for Software Engineer internship && full time job. If you have some positions, please contact me :)\n"
 
 Array.from(aboutMeTextContent).forEach((char) => {
     const span = document.createElement("span");
     span.textContent = char;
     aboutMeText.appendChild(span);
 
-    span.addEventListener("mouseenter", (e) => {
-        e.target.style.animation = "aboutMeTextAnim 10s infinite";
-    });
+    // span.addEventListener("mouseenter", (e) => {
+    //     e.target.style.cssText = "aboutMeTextAnim 10s infinite";
+    // });
 });
 // End of About Me Text
 
@@ -277,16 +278,23 @@ const projects = document.querySelectorAll(".project");
 const projectHideBtn = document.querySelector(".project-hide-btn");
 
 projects.forEach((project,i)=>{
+    //subtract the height of project from the height of image scroll up - the top will be negative
+    //go the negative 'top' pos -- looks like sliding down that's how the sliding effect shows
     project.addEventListener("mouseenter",()=>{
+        // console.log('topimg '+project.firstElementChild.style.top);
+        // console.log('toppro '+project.offsetHeight);
         project.firstElementChild.style.top = `-${project.
-            firstElementChild.offsetHeight - project.offsetHeight+20}px`;
+            firstElementChild.offsetHeight - project.offsetHeight + 20}px`;
+        // console.log('topimgafter '+project.firstElementChild.style.top);
     });
 
+    //when the mouse leave set top be positive number the image will go up
     project.addEventListener("mouseleave",()=>{
         project.firstElementChild.style.top = "2rem";
     });
 
     //big Project Image
+    if(i != 1){
     project.addEventListener('click',()=>{
         const bigImgWrapper = document.createElement("div");
         bigImgWrapper.className = "project-img-wrapper";
@@ -298,6 +306,7 @@ projects.forEach((project,i)=>{
 
         bigImg.setAttribute("src",`${imgPath}-big.jpg`);
         bigImgWrapper.appendChild(bigImg);
+        //hid the scroll bar for the image
         document.body.style.overflowY = "hidden";
 
         document.removeEventListener("scroll",scrollFn);
@@ -320,7 +329,49 @@ projects.forEach((project,i)=>{
             document.addEventListener("scroll",scrollFn);
             progressBarFn();
         }
-    });
+    });}
+    if(i == 1){
+        project.addEventListener('click', (qualifiedName, value)=>{
+        const bigImgWrappers = document.createElement("div");
+        bigImgWrappers.className = "project-img-wrapper";
+        container.appendChild(bigImgWrappers);
+        const bigVideo = document.createElement("video");
+        bigVideo.className = "project-video";
+        const source = document.createElement("source");
+
+        const VideoPath = project.firstElementChild.getAttribute("src").split(".")[0];
+        console.log(VideoPath);
+        source.setAttribute("src",`${VideoPath}-big.mp4`);
+        source.setAttribute("type", "video/mp4");
+        bigVideo.setAttribute("width", "1444");
+        bigVideo.setAttribute("height","960");
+        bigVideo.setAttribute("muted",value);
+        bigVideo.setAttribute("controls", value);
+
+        bigVideo.appendChild(source);
+        bigImgWrappers.appendChild(bigVideo);
+        bigVideo.muted = true;
+        document.body.style.overflowY = "hidden";
+        document.removeEventListener("scroll",scrollFn);
+        mouseCircle.style.opacity = 0;
+        progressBarFn(bigImgWrappers);
+
+        bigImgWrappers.onscroll = () =>{
+            progressBarFn(bigImgWrappers);
+        }
+
+        projectHideBtn.classList.add("change");
+
+        projectHideBtn.onclick = () =>{
+            projectHideBtn.classList.remove("change");
+            bigImgWrappers.remove();
+            document.body.style.overflowY = "scroll";
+
+            document.addEventListener("scroll",scrollFn);
+            progressBarFn();
+        }
+    })}
+
     //End of big Project Image
     i>=6 && (project.style.cssText = "display:none; opacity:0");
 });

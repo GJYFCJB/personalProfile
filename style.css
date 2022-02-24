@@ -450,20 +450,21 @@ html{
 
 /* About Me Text */
 .about-me-text {
-    width: 80%;
+    width: 90%;
+    color: white;
     margin: auto;
 }
 
 .about-me-text span {
     font-family: "Poppins", sans-serif;
-    font-size: 15rem;
+    font-size:3.7rem;
     font-weight: bold;
     color: #aaa;
     letter-spacing: 0.5rem;
     line-height: 0.9;
     text-shadow: 0 0 1rem #9b0e0e;
     position: relative;
-    mix-blend-mode: color-dodge;
+    /*mix-blend-mode: color-dodge;*/
 }
 
 @keyframes aboutMeTextAnim {
@@ -586,7 +587,24 @@ html{
     z-index:100;
     scroll-behavior: smooth;
     animation: imgWrapperAnim 1s forwards;
+    /*//forwards to maintain the height 1005 at the end*/
 }
+
+/*.project-img-wrappers{*/
+/*    position:fixed;*/
+/*    top:0;*/
+/*    left:0;*/
+/*    width:100%;*/
+/*    height:0;*/
+/*    background-color: rgba(0,0,0,0.9);*/
+/*    overflow: hidden scroll;*/
+/*    z-index:100;*/
+/*    scroll-behavior: smooth;*/
+/*    animation: imgWrapperAnim 1s forwards;*/
+/*    !*forwards to maintain the height 1005 at the end*!*/
+/*}*/
+
+
 
 @keyframes imgWrapperAnim {
     0%{
@@ -855,12 +873,12 @@ html{
     }
 
     .main-circle img{
-        width: 160%;
-        height: 160%;
+        width: 100%;
+        height: 100%;
     }
 
     .about-me-text span{
-        font-size:11rem;
+        font-size:3rem;
     }
 
     .section-4{
@@ -882,9 +900,9 @@ html{
         height: 12.5rem;
     }
 
-    .circle{
-        display: none;
-    }
+    /*.circle{*/
+    /*    display: none;*/
+    /*}*/
 
     .progress-bar{
         right: 1rem;
@@ -892,13 +910,18 @@ html{
     }
 
     .about-me-text span{
-        font-size:10rem;
+        font-size:3rem;
     }
 }
 
 @media(max-width: 1150px){
     html{
         font-size: 50%;
+    }
+
+
+    .circle{
+        display: none;
     }
 
     .mouse-cricle,
@@ -916,7 +939,7 @@ html{
     }
 
     .about-me-text span{
-        font-size: 7.5rem
+        font-size: 3.5rem
     }
 
     .project-img{
@@ -967,7 +990,7 @@ html{
     }
 
     .about-me-text span{
-        font-size: 5.5rem;
+        font-size: 3.5rem;
         color:#CCC;
     }
 
